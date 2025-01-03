@@ -4,19 +4,17 @@ import java.awt.Color;
 import java.awt.Graphics;
 import org.snakeinc.snake.AlimentEater;
 
-public class Apple extends Aliment {
 
-    public Apple() {
+public class Brocoli extends Aliment {
+    public Brocoli() {
         super();
     }
 
     public void draw(Graphics g) {
-        g.setColor(Color.GREEN);
+        g.setColor(Color.RED);
         position.drawOval(g);
     }
-    @Override
     public void beEatenby(AlimentEater alimentEater) {
         alimentEater.eat(this);
     }
-
 }

@@ -1,3 +1,4 @@
 rootProject.name = 'snakeInc'
 include 'snake'
+include 'server'
 

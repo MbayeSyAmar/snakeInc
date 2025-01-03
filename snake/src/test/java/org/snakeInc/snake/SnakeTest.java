@@ -20,7 +20,8 @@ public class SnakeTest {
         Snake snake = new Snake();
         snake.move('U');
         Assertions.assertEquals(5, snake.getHead().getX());
-        Assertions.assertEquals(5, snake.getHead().getY());
+        Assertions.assertEquals(4, snake.getHead().getY());
+        // Assertions.assertEquals(5, snake.getHead().getY());
     }
 
 }

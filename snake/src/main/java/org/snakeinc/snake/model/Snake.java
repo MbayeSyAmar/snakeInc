@@ -4,9 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-public class Snake {
+import org.snakeinc.snake.AlimentEater;
 
-    private final ArrayList<Tile> body;
+public class Snake implements AlimentEater {
+
+    protected final ArrayList<Tile> body;
 
     public Snake() {
         body = new ArrayList<>();
@@ -23,6 +25,10 @@ public class Snake {
 
     public void eat(Apple apple) {
         body.add(apple.getPosition());
+    }
+    public void eat(Brocoli brocoli) {
+        body.removeLast();
+        body.removeLast();
     }
 
     public void move(char direction) {
@@ -53,7 +59,6 @@ public class Snake {
             t.drawRectangle(g);
         }
     }
-
     public boolean checkSelfCollision() {
         for (int i = 1; i < body.size(); i++) {
             if (getHead().equals(body.get(i))) {
@@ -62,9 +67,11 @@ public class Snake {
         }
         return false;
     }
-
+// 
     public boolean checkWallCollision() {
         return !getHead().isInsideGame();
     }
 
 }
+
+
